@@ -8,33 +8,15 @@ import { Province } from '../../interfaces/province';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  provinces: Province[];
-  misProvincias:Province[]=[];
-  selectedProvince: string='';
+  objeto: any;
+  constructor(private dataService: DataService) {}
 
-
-  constructor(private provinceService: DataService) { }
-
-  ngOnInit():void {
-    this.getProvinces();
+  ngOnInit() {
+    this.objeto = this.dataService.getObjeto();
+    //console.log(this.objeto);
   }
 
-  getProvinces = async () => {
-    await this.provinceService.getProvinces().subscribe((resp: any) => {
-      this.provinces = resp.provincias;
-     // console.log(this.provinces);
-      for(let p in  this.provinces){
-        this.misProvincias.push(this.provinces[p]);
-      }
-      console.log(this.misProvincias);
-    });
-  }
 
-  onProvinceChange(event: any) {
-    const value = event.target.value;
-    this.selectedProvince = value;
-    console.log(this.selectedProvince);
-  }
   
   
 

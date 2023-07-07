@@ -8,7 +8,16 @@ import { Province } from '../interfaces/province';
 export class DataService {
 
   constructor(private http:HttpClient) { }
+  private objeto: any;
 
+  setObjeto(data: any) {
+    this.objeto = data;
+  }
+
+  getObjeto() {
+    return this.objeto;
+  }
+  
   getProvinces =()=> {
     return this.http.get<Province[]>(`https://www.el-tiempo.net/api/json/v2/provincias`);
   } 

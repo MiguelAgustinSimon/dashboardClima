@@ -7,12 +7,16 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SelectComponent } from './components/select/select.component';
+import { MainComponent } from './views/main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    SelectComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path:'', component:DashboardComponent},
+      {path:'', component:MainComponent},
       {path:'**', redirectTo:'/', pathMatch:'full'}
     ])
   ],
