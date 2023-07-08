@@ -13,9 +13,11 @@ export class MainComponent implements OnInit {
   selectComponent: boolean = false;
   
   ngOnInit() {
-    this.selectComponent = this.stateService.getComponenteEjecutado(1);
-    console.log(`selectComponent cargado?: ${this.selectComponent}`);
-    
+    this.stateService.stateObservable.subscribe((newState) => {
+      this.selectComponent=newState;
+    });
   }
+
+  
 
 }

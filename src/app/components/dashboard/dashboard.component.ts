@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.objeto = this.dataService.getObjeto();
-    //console.log(this.objeto);
+    console.log(this.objeto);
   }
 
 

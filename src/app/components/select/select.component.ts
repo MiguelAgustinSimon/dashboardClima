@@ -26,7 +26,7 @@ export class SelectComponent implements OnInit {
       for(let p in  this.provinces){
         this.misProvincias.push(this.provinces[p]);
       }
-      console.log(this.misProvincias);
+      // console.log(this.misProvincias);
     });
   }
 
@@ -34,7 +34,7 @@ export class SelectComponent implements OnInit {
     const value = event.target.value;
     this.selectedProvince = value;
     this.dataService.setObjeto(this.selectedProvince);
-    this.stateService.setComponenteEjecutado(1,true); //El usuario ha seleccionado una provincia, paso 1 OK.
+    this.stateService.changeState(true); //El usuario ha seleccionado una provincia, paso 1 OK.
     
   }
 }
