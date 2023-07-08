@@ -11,7 +11,7 @@ import { Province } from '../../interfaces/province';
 export class SelectComponent implements OnInit {
   provinces: Province[];
   misProvincias:Province[]=[];
-  selectedProvince: string='';
+  selectedProvince: number;
 
   constructor(private dataService: DataService, private stateService:StateService) { }
 
@@ -20,21 +20,17 @@ export class SelectComponent implements OnInit {
   }
 
   getProvinces = async () => {
-    await this.dataService.getProvinces().subscribe((resp: any) => {
+    await (await this.dataService.getProvinces()).subscribe((resp: any) => {
       this.provinces = resp.provincias;
-     // console.log(this.provinces);
       for(let p in  this.provinces){
         this.misProvincias.push(this.provinces[p]);
       }
-      // console.log(this.misProvincias);
     });
   }
 
   onProvinceChange(event: any) {
-    const value = event.target.value;
-    this.selectedProvince = value;
-    this.dataService.setObjeto(this.selectedProvince);
+    this.selectedProvince = event.target.value;   
+    this.stateService.changeProvince(this.selectedProvince);
     this.stateService.changeState(true); //El usuario ha seleccionado una provincia, paso 1 OK.
-    
   }
 }
