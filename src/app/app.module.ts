@@ -9,6 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SelectComponent } from './components/select/select.component';
 import { MainComponent } from './views/main/main.component';
+import { PresentationComponent } from './views/presentation/presentation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MainComponent } from './views/main/main.component';
     DashboardComponent,
     NavbarComponent,
     SelectComponent,
-    MainComponent
+    MainComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { MainComponent } from './views/main/main.component';
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path:'', component:MainComponent},
+      {path:'', component:PresentationComponent},
+      {path:'main', component:MainComponent},
       {path:'**', redirectTo:'/', pathMatch:'full'}
     ])
   ],

@@ -1,7 +1,53 @@
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <p>DASHBOARD WORKS</p>
+<!-- <div *ngIf="provinceReady" class="container-fluid">
+  <div class="row">
+    <h2>{{ myProvince.NOMBRE_PROVINCIA }}</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let city of citiesArray">
+      <div class="card mb-4">
+        <div class="card-header">{{ city.name }}</div>
+        <div class="card-body">
+          <p>Estado del cielo: {{ city.stateSky }}</p>
+          <p>Temperaturas</p>
+          <p>Temperatura Mínima: {{ city.tempMin }}°C </p>
+          <p *ngIf="city?.tempMax !== undefined && city?.tempMax >= 30">Temperatura Máxima: {{ city?.tempMax }}°C</p>
+
+
+     
+        </div>
       </div>
     </div>
   </div>
+</div> -->
+
+<div *ngIf="provinceReady" class="container-fluid">
+  <div class="row">
+    <h2>{{ myProvince.NOMBRE_PROVINCIA }}</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let city of citiesArray">
+      <div class="card mb-4 text-center">
+        <div class="card-header">{{ city.name }}</div>
+        <div class="card-body">
+          <p>Estado del cielo: {{ city.stateSky }}</p>
+          <p>Temperaturas</p>
+          <p *ngIf="city?.tempMin<=12; else elseifTempMin" class="texto-gris">Temperatura Mínima: {{ city?.tempMin }}°C
+            <i class="fa-regular fa-snowflake fa-2xl" style="color: #b6b7b9;"></i></p>
+          <ng-template #elseifTempMin>
+            <p>Temperatura Mínima: {{ city?.tempMin }}°C <i
+                class="fa-solid fa-temperature-half fa-2xl"></i></p>
+          </ng-template>
+
+
+          <p *ngIf="city?.tempMax>=30; else elseifTempMax" class="texto-rojo">Temperatura Máxima: {{ city?.tempMax }}°C
+            <i class="fa-solid fa-sun fa-2xl" style="color: #ff0000;"></i></p>
+          <ng-template #elseifTempMax>
+            <p>Temperatura Máxima: {{ city?.tempMax }}°C <i class="fa-solid fa-temperature-arrow-up fa-2xl"></i></p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

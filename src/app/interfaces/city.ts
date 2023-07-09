@@ -1,7 +1,7 @@
 export interface City {
     id?:number;
     name?:string;
-    statyeSky?:string;
+    stateSky?:string;
     tempMin?:number;
     tempMax?:number;
 }
