@@ -17,7 +17,6 @@ export class StateService {
     this.stateSubject.next(newState);
   }
   changeProvince(newProvince: number) {
-    
     this.provinceSubject.next(newProvince);
   }
 

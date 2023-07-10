@@ -30,8 +30,9 @@ export class DashboardComponent implements OnInit {
   getProvince = async (id: number) => {
     await (await this.dataService.getProvince(id)).pipe(
       map((resp: any) => {
-        // console.log(resp);
         this.citiesArray=[];
+        this.dataService.setCiudadesToNull();
+
         for (const ciudad of resp.ciudades) {
           this.myCity = {
             name: ciudad.name,
@@ -49,9 +50,9 @@ export class DashboardComponent implements OnInit {
             cities: this.citiesArray
           }
         }
-
-        // Utilizar el objeto provincia como necesites
-        console.log(this.myProvince);
+        
+        // Asigno al DS para pasarselo al componente de graficos
+        this.dataService.setCiudades(this.citiesArray);
         this.provinceReady = true;
       })
     ).subscribe();

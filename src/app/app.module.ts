@@ -10,6 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SelectComponent } from './components/select/select.component';
 import { MainComponent } from './views/main/main.component';
 import { PresentationComponent } from './views/presentation/presentation.component';
+import { GraphicBarComponent } from './components/graphic-bar/graphic-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PresentationComponent } from './views/presentation/presentation.compone
     NavbarComponent,
     SelectComponent,
     MainComponent,
-    PresentationComponent
+    PresentationComponent,
+    GraphicBarComponent
   ],
   imports: [
     BrowserModule,

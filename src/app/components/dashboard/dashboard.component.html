@@ -1,26 +1,3 @@
-<!-- <div *ngIf="provinceReady" class="container-fluid">
-  <div class="row">
-    <h2>{{ myProvince.NOMBRE_PROVINCIA }}</h2>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4" *ngFor="let city of citiesArray">
-      <div class="card mb-4">
-        <div class="card-header">{{ city.name }}</div>
-        <div class="card-body">
-          <p>Estado del cielo: {{ city.stateSky }}</p>
-          <p>Temperaturas</p>
-          <p>Temperatura Mínima: {{ city.tempMin }}°C </p>
-          <p *ngIf="city?.tempMax !== undefined && city?.tempMax >= 30">Temperatura Máxima: {{ city?.tempMax }}°C</p>
-
-
-     
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <div *ngIf="provinceReady" class="container-fluid">
   <div class="row">
     <h2>{{ myProvince.NOMBRE_PROVINCIA }}</h2>
@@ -50,4 +27,7 @@
       </div>
     </div>
   </div>
+
+  <app-graphic-bar></app-graphic-bar>
 </div>
+

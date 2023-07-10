@@ -9,6 +9,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
   private objeto: any;
+  private ciudades: any[] = [];
 
   setObjeto(data: any) {
     this.objeto = data;
@@ -26,4 +27,16 @@ export class DataService {
     return this.http.get<Province>(`https://www.el-tiempo.net/api/json/v2/provincias/${id}`);
   }
 
+  getCiudades(): any[] {
+    return this.ciudades;
+  }
+
+  setCiudades(ciudades: any[]): void {
+    this.ciudades = ciudades;
+  }
+
+  setCiudadesToNull(): void {
+    this.ciudades = [];
+  }
+  
 }
