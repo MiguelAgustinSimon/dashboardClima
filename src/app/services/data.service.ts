@@ -27,7 +27,7 @@ export class DataService {
     return this.http.get<Province>(`https://www.el-tiempo.net/api/json/v2/provincias/${id}`);
   }
 
-  getCiudades(): any[] {
+  getCiudades=async()=>{
     return this.ciudades;
   }
 

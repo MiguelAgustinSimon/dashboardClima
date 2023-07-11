@@ -29,8 +29,8 @@ export class SelectComponent implements OnInit {
   }
 
   onProvinceChange(event: any) {
-    this.selectedProvince = event.target.value;   
+    this.selectedProvince = event.target.value; 
     this.stateService.changeProvince(this.selectedProvince);
-    this.stateService.changeState(true); //El usuario ha seleccionado una provincia, paso 1 OK.
+    this.stateService.changeState(true); //El usuario ha seleccionado una provincia, main lo detecta y muestra dashboard.
   }
 }

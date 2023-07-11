@@ -20,9 +20,11 @@ export class DashboardComponent implements OnInit {
   constructor(private dataService: DataService, private stateService: StateService) { }
 
   ngOnInit() {
-    this.stateService.provinceObservable.subscribe((newProvince) => {
+    this.stateService.provinceObservable.subscribe(async (newProvince) => {
       this.selectedProvince = newProvince;
-      this.getProvince(this.selectedProvince);
+      // es como una llave: aca bajar el interruptor
+      this.stateService.changeStateProvince(false);
+      await this.getProvince(this.selectedProvince);
     });
   }
 
@@ -30,9 +32,7 @@ export class DashboardComponent implements OnInit {
   getProvince = async (id: number) => {
     await (await this.dataService.getProvince(id)).pipe(
       map((resp: any) => {
-        this.citiesArray=[];
-        this.dataService.setCiudadesToNull();
-
+        this.deleteProvinceArray();
         for (const ciudad of resp.ciudades) {
           this.myCity = {
             name: ciudad.name,
@@ -50,12 +50,21 @@ export class DashboardComponent implements OnInit {
             cities: this.citiesArray
           }
         }
-        
+
         // Asigno al DS para pasarselo al componente de graficos
         this.dataService.setCiudades(this.citiesArray);
         this.provinceReady = true;
+
+        // aca subir el interruptor
+        this.stateService.changeStateProvince(true);
+
       })
     ).subscribe();
+  }
+
+  deleteProvinceArray = async () => {
+    this.citiesArray = [];
+    this.dataService.setCiudadesToNull();
   }
 
 
