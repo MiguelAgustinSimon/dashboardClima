@@ -11,6 +11,8 @@ import { SelectComponent } from './components/select/select.component';
 import { MainComponent } from './views/main/main.component';
 import { PresentationComponent } from './views/presentation/presentation.component';
 import { GraphicBarComponent } from './components/graphic-bar/graphic-bar.component';
+import { DistrictsComponent } from './views/districts/districts.component';
+import { SelectDistrictsComponent } from './components/select-districts/select-districts.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { GraphicBarComponent } from './components/graphic-bar/graphic-bar.compon
     SelectComponent,
     MainComponent,
     PresentationComponent,
-    GraphicBarComponent
+    GraphicBarComponent,
+    DistrictsComponent,
+    SelectDistrictsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,7 @@ import { GraphicBarComponent } from './components/graphic-bar/graphic-bar.compon
     RouterModule.forRoot([
       {path:'', component:PresentationComponent},
       {path:'main', component:MainComponent},
+      {path:'districts', component:DistrictsComponent},
       {path:'**', redirectTo:'/', pathMatch:'full'}
     ])
   ],

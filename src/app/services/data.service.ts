@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Province } from '../interfaces/province';
+import { District } from '../interfaces/district';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,14 @@ export class DataService {
 
   getProvince = async (id: number) => {
     return this.http.get<Province>(`https://www.el-tiempo.net/api/json/v2/provincias/${id}`);
+  }
+
+  getDistrictsByProvince = async (idProvince:number) => {
+    return this.http.get<District[]>(`https://www.el-tiempo.net/api/json/v2/provincias/${idProvince}/municipios`);
+  }
+
+  getDistrict = async (idProvince:number, id: number) => {
+    return this.http.get<District>(`https://www.el-tiempo.net/api/json/v2/provincias/${idProvince}/municipios/${id}`);
   }
 
   getCiudades=async()=>{
