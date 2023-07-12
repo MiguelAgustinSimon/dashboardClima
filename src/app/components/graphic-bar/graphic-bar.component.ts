@@ -59,7 +59,6 @@ export class GraphicBarComponent implements OnInit, OnDestroy {
       this.chart.destroy();
     }
     const ctx = this.canvasRef.nativeElement.getContext('2d');
-
     this.chart = new Chart(ctx, {
       type: 'bar',
       data: {

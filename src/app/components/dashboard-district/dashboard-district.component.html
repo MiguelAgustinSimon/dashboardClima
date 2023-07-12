@@ -5,17 +5,15 @@
   
     <div class="row">
       <div class="col-md-4">
-        <div class="card">
+        <div class="card text-center">
             <div class="card-header">
               <h5 class="card-title">{{ myDistrict.NOMBRE }}</h5>
             </div>
             <div class="card-body">
-              <p class="card-text">Código INE: {{ myDistrict.CODIGOINE }}</p>
-              <p class="card-text">Código Provincia: {{ myDistrict.CODPROV }}</p>
               <p class="card-text">Población: {{ myDistrict.POBLACION_MUNI }}</p>
               <p class="card-text">Superficie: {{ myDistrict.SUPERFICIE }}</p>
               <p class="card-text">Humedad: {{ myDistrict.humedad }}</p>
-              <p class="card-text">Probabilidad de precipitación: {{ myDistrict.prob_precipitacion }}</p>
+              <p class="card-text">Probabilidad de precipitaciónes: {{ myDistrict.prob_precipitacion }}%</p>
               <p class="card-text">Estado del cielo: {{ myDistrict.stateSky }}</p>
               <p class="card-text">Temperatura Actual: {{ myDistrict.tempActual }}</p>
               <p class="card-text">Temperatura Máxima: {{ myDistrict.tempMax }}</p>
@@ -26,8 +24,8 @@
           
       </div>
     </div>
-<!--   
-    <app-graphic-bar></app-graphic-bar> -->
+  
+    <app-horizontal-bar-chart></app-horizontal-bar-chart> 
   </div>
   
   

@@ -15,11 +15,8 @@ export class DashboardDistrictComponent implements OnInit {
   myDistrict: District;
   constructor(private dataService: DataService, private stateService: StateService) { }
 
-  ngOnInit(): void {
-    console.log("Llego a dashboard nuevo");
-    
+  ngOnInit(): void {    
     this.getDistrict();
-    
   }
 
   getDistrict = async () => {
@@ -27,7 +24,6 @@ export class DashboardDistrictComponent implements OnInit {
       await this.dataService.getSavedDistrict()
       .then((resp: District) => {
         this.myDistrict = resp;
-        console.log(this.myDistrict);
         this.districtReady=true;
       })
       .catch(error => {

@@ -41,6 +41,7 @@ export class SelectDistrictsComponent implements OnInit {
   }
 
   async onDistrictChange(event: any) {
+    this.stateService.changeStateDistrict(false);
     this.selectedDistrict = event.target.value;
     let digits = this.selectedDistrict.toString().slice(0, 5);
     console.log(digits);
@@ -62,7 +63,7 @@ export class SelectDistrictsComponent implements OnInit {
           tempMax: parseInt(resp.temperaturas.max, 10),
           humedad: resp.humedad,
           viento: resp.viento,
-          prob_precipitacion: 50
+          prob_precipitacion: Math.floor(Math.random() * 100)
         }
         this.districtsArray.push(this.myDistrict);
         this.saveObject(this.myDistrict);

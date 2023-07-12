@@ -14,6 +14,7 @@ import { GraphicBarComponent } from './components/graphic-bar/graphic-bar.compon
 import { DistrictsComponent } from './views/districts/districts.component';
 import { SelectDistrictsComponent } from './components/select-districts/select-districts.component';
 import { DashboardDistrictComponent } from './components/dashboard-district/dashboard-district.component';
+import { HorizontalBarChartComponent } from './components/horizontal-bar-chart/horizontal-bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DashboardDistrictComponent } from './components/dashboard-district/dash
     GraphicBarComponent,
     DistrictsComponent,
     SelectDistrictsComponent,
-    DashboardDistrictComponent
+    DashboardDistrictComponent,
+    HorizontalBarChartComponent
   ],
   imports: [
     BrowserModule,
