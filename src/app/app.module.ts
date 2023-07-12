@@ -13,6 +13,7 @@ import { PresentationComponent } from './views/presentation/presentation.compone
 import { GraphicBarComponent } from './components/graphic-bar/graphic-bar.component';
 import { DistrictsComponent } from './views/districts/districts.component';
 import { SelectDistrictsComponent } from './components/select-districts/select-districts.component';
+import { DashboardDistrictComponent } from './components/dashboard-district/dashboard-district.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SelectDistrictsComponent } from './components/select-districts/select-d
     PresentationComponent,
     GraphicBarComponent,
     DistrictsComponent,
-    SelectDistrictsComponent
+    SelectDistrictsComponent,
+    DashboardDistrictComponent
   ],
   imports: [
     BrowserModule,

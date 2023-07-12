@@ -6,5 +6,12 @@
         <div *ngIf="selectComponent" class="col-md-4">
             <app-select-districts></app-select-districts>
         </div>
+        <div class="col-md-4"><!--vacio--></div>
+    </div>
+
+    <div *ngIf="districtComponent" class="row">
+        <div class="col-md-12">
+            <app-dashboard-district></app-dashboard-district>
+        </div>
     </div>
 </div>

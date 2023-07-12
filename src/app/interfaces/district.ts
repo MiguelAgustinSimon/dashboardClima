@@ -3,9 +3,9 @@ export interface District {
     CODPROV?: string;
     NOMBRE?: string;
     POBLACION_MUNI?: number;
-    SUPERFICIE?: number;
+    SUPERFICIE?: string;
     stateSky?:string;
-    tempActual:number;
+    tempActual?:number;
     tempMin?:number;
     tempMax?:number;
     humedad?:number;

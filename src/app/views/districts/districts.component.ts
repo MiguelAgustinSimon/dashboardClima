@@ -12,10 +12,14 @@ export class DistrictsComponent implements OnInit {
   constructor(private dataService: DataService, private stateService:StateService) { }
   
   selectComponent: boolean = false;
+  districtComponent: boolean = false;
   
   ngOnInit() {
     this.stateService.stateObservable.subscribe((newState) => {
       this.selectComponent=newState;
+    });
+    this.stateService.districtObservable.subscribe((newState) => {
+      this.districtComponent=newState;
     });
   }
 

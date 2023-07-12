@@ -11,6 +11,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
   private objeto: any;
   private ciudades: any[] = [];
+  private district:District;
 
   setObjeto(data: any) {
     this.objeto = data;
@@ -32,7 +33,7 @@ export class DataService {
     return this.http.get<District[]>(`https://www.el-tiempo.net/api/json/v2/provincias/${idProvince}/municipios`);
   }
 
-  getDistrict = async (idProvince:number, id: number) => {
+  getDistrict = async (idProvince:number, id: string) => {
     return this.http.get<District>(`https://www.el-tiempo.net/api/json/v2/provincias/${idProvince}/municipios/${id}`);
   }
 
@@ -46,6 +47,14 @@ export class DataService {
 
   setCiudadesToNull(): void {
     this.ciudades = [];
+  }
+
+  saveDistrict(objet: District) {
+    this.district=objet;
+  }
+
+  getSavedDistrict=async()=>{
+    return this.district;
   }
   
 }
