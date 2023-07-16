@@ -15,6 +15,9 @@ import { DistrictsComponent } from './views/districts/districts.component';
 import { SelectDistrictsComponent } from './components/select-districts/select-districts.component';
 import { DashboardDistrictComponent } from './components/dashboard-district/dashboard-district.component';
 import { HorizontalBarChartComponent } from './components/horizontal-bar-chart/horizontal-bar-chart.component';
+import { SensorsComponent } from './views/sensors/sensors.component';
+import { GraphicBarTemperatureComponent } from './components/graphic-bar-temperature/graphic-bar-temperature.component';
+import { GraphicBarHumidityComponent } from './components/graphic-bar-humidity/graphic-bar-humidity.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { HorizontalBarChartComponent } from './components/horizontal-bar-chart/h
     DistrictsComponent,
     SelectDistrictsComponent,
     DashboardDistrictComponent,
-    HorizontalBarChartComponent
+    HorizontalBarChartComponent,
+    SensorsComponent,
+    GraphicBarTemperatureComponent,
+    GraphicBarHumidityComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +45,7 @@ import { HorizontalBarChartComponent } from './components/horizontal-bar-chart/h
       {path:'', component:PresentationComponent},
       {path:'main', component:MainComponent},
       {path:'districts', component:DistrictsComponent},
+      {path:'sensores', component:SensorsComponent},
       {path:'**', redirectTo:'/', pathMatch:'full'}
     ])
   ],

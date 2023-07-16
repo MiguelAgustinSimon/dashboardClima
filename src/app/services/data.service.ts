@@ -56,5 +56,13 @@ export class DataService {
   getSavedDistrict=async()=>{
     return this.district;
   }
+
+  getTemperatureEvents = async () => {    
+    return this.http.get<[]>(`http://localhost:3000/api/getTemperatureEvents`);
+  }
+  
+  getHumidityEvents = async () => {
+    return this.http.get<[]>(`http://localhost:3000/api/getHumidityEvents`);
+  }
   
 }
