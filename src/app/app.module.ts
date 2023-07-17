@@ -18,6 +18,7 @@ import { HorizontalBarChartComponent } from './components/horizontal-bar-chart/h
 import { SensorsComponent } from './views/sensors/sensors.component';
 import { GraphicBarTemperatureComponent } from './components/graphic-bar-temperature/graphic-bar-temperature.component';
 import { GraphicBarHumidityComponent } from './components/graphic-bar-humidity/graphic-bar-humidity.component';
+import { DistanceChartComponent } from './components/distance-chart/distance-chart.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { GraphicBarHumidityComponent } from './components/graphic-bar-humidity/g
     HorizontalBarChartComponent,
     SensorsComponent,
     GraphicBarTemperatureComponent,
-    GraphicBarHumidityComponent
+    GraphicBarHumidityComponent,
+    DistanceChartComponent
   ],
   imports: [
     BrowserModule,

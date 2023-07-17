@@ -64,5 +64,9 @@ export class DataService {
   getHumidityEvents = async () => {
     return this.http.get<[]>(`http://localhost:3000/api/getHumidityEvents`);
   }
+
+  getDistanceEvents = async () => {
+    return this.http.get<[]>(`http://localhost:3000/api/getDistanceEvents`);
+  }
   
 }
