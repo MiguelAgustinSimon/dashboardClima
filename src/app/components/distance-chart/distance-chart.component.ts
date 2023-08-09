@@ -38,7 +38,6 @@ export class DistanceChartComponent implements OnInit {
 
 
   ngOnDestroy() {
-    // Destruir el gráfico al salir del componente
     if (this.chart) {
       this.chart.destroy();
     }
